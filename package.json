@@ -10,5 +10,11 @@
   "dependencies": {},
   "devDependencies": {
     "parcel": "^2.14.0"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "targets": {
+    "default": {
+      "publicUrl": "./"
+    }
   }
 }
