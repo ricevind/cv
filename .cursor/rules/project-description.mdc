@@ -1,0 +1,101 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Rules and Guidelines
+
+## HTML Requirements
+
+### Basic Requirements
+
+- DOCTYPE declaration is required at the start of HTML files
+- HTML tag must specify lang attribute
+- Meta viewport tag is required for responsive design
+
+### Semantic Structure
+
+Use semantic HTML5 elements instead of generic divs where appropriate.
+
+**Preferred Elements:**
+
+- `<header>`
+- `<main>`
+- `<nav>`
+- `<article>`
+- `<section>`
+- `<aside>`
+- `<footer>`
+
+**Elements to Avoid:**
+
+- `div.header`
+- `div.footer`
+- `div.navigation`
+
+### Headings
+
+- `h1` should be used once per page
+- Headings should follow sequential order (h1-h6)
+
+### ARIA Landmarks
+
+When semantic elements aren't sufficient, use ARIA landmarks:
+
+- `role="banner"`
+- `role="main"`
+- `role="navigation"`
+
+### Images
+
+- All `img` elements must have alt attributes
+- Decorative images should use `alt=""`
+
+## CSS Guidelines
+
+### Print Styles
+
+Include print-specific styles using `@media print`
+
+**Recommendations:**
+
+- Avoid background colors in print
+- Ensure sufficient contrast for printed text
+- Hide non-essential elements in print view
+
+### Modern CSS Features
+
+**Preferred Approaches:**
+
+- CSS Grid for layout
+- CSS Custom Properties for theming
+- CSS Logical Properties for better i18n
+- Container Queries for component-based responsiveness
+
+### Accessibility Requirements
+
+- **Contrast:** Minimum ratio of 4.5:1 for normal text, 3:1 for large text
+- **Focus:** Visible focus indicators must be present for interactive elements
+- **Motion:** Respect prefers-reduced-motion media query
+
+## Best Practices
+
+### Performance Optimization
+
+- Use responsive images with srcset and sizes
+- Lazy load below-the-fold images
+- Minimize render-blocking resources
+
+### Accessibility Guidelines
+
+- All interactive elements must be keyboard accessible
+- Use ARIA attributes only when necessary, prefer semantic HTML
+- Test with screen readers and keyboard navigation
+
+## Parcel Configuration
+
+### Recommendations
+
+- Use .parcelrc for custom configurations
+- Leverage Parcel's automatic transforms
+- Enable source maps in development
