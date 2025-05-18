@@ -166,29 +166,102 @@ body {
 
 /* Print styles */
 @media print {
+  html {
+    font-size: 12px;
+  }
+  
   body {
     background-color: white;
-    
-    & .cv-container {
-      margin: 0;
-      padding: 0;
-      box-shadow: none;
-      max-width: 100%;
-      
-      & .cv-header h1 {
-        color: black;
-      }
-      
-      & .cv-section h2, 
-      & .job h3, 
-      & .education h3 {
-        color: black;
-      }
-    }
+    line-height: 1.4;
+  }
+  
+  .cv-container {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    max-width: 100%;
+  }
+  
+  .cv-header {
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.8rem;
+    border-bottom-width: 1px;
+  }
+  
+  .cv-header h1 {
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-info {
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .contact-info p {
+    margin: 0.1rem 0;
+    font-size: 1rem;
+  }
+  
+  .cv-section {
+    margin-bottom: 1rem;
+  }
+  
+  .cv-section h2 {
+    color: black;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+    font-size: 1.3rem;
+  }
+  
+  .job, .education {
+    margin-bottom: 0.8rem;
+    grid-template-columns: 1fr 3fr;
+    gap: 0.2rem;
+    row-gap: 0.15rem;
+  }
+  
+  .job h3, .education h3 {
+    color: black;
+    font-size: 1.1rem;
+    margin-top: -2px;
+  }
+  
+  .organization {
+    font-size: 1rem;
+  }
+  
+  .date-range, .duration {
+    color: #444;
+    font-size: 0.9rem;
+    margin: 0.1rem 0;
+  }
+  
+  .description {
+    margin-top: 0.1rem;
+  }
+  
+  .description ul {
+    padding-left: 1rem;
+    margin: 0.2rem 0;
+  }
+  
+  .description ul li {
+    margin-bottom: 0.2rem;
+    padding: 0;
+    line-height: 1.4;
+  }
+  
+  .skills {
+    margin-top: 0.1rem;
+    font-size: 1rem;
   }
   
   @page {
-    margin: 1.5cm;
+    margin: 0.8cm;
+    size: auto;
   }
 }
 
