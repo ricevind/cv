@@ -217,7 +217,7 @@ body {
   }
   
   .job, .education {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.1rem;
     grid-template-columns: 1fr 3fr;
     gap: 0.2rem;
     row-gap: 0.15rem;
@@ -226,7 +226,8 @@ body {
   .job h3, .education h3 {
     color: black;
     font-size: 1.1rem;
-    margin-top: -2px;
+    margin-top: -4px;
+
   }
   
   .organization {
