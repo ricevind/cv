@@ -18,7 +18,7 @@ body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--text-color);
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 .cv-container {
@@ -31,8 +31,22 @@ body {
 
 .cv-header {
   border-bottom: 2px solid var(--secondary-color);
-  padding-bottom: var(--section-spacing);
   margin-bottom: var(--section-spacing);
+  
+  & .cv-header-title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+
+    & p {
+      margin: 0;
+      color: var(--text-color);
+      font-size: 1.2rem;
+      text-align: right;
+    }
+  }
   
   & h1 {
     margin: 0;
@@ -65,7 +79,6 @@ body {
 }
 
 .cv-section {
-  margin-bottom: var(--section-spacing);
   
   & h2 {
     color: var(--primary-color);
@@ -205,9 +218,6 @@ body {
     font-size: 1rem;
   }
   
-  .cv-section {
-    margin-bottom: 0.2rem;
-  }
   
   .cv-section h2 {
     color: black;
@@ -309,9 +319,6 @@ body {
   }
   
   /* Optimize spacing for smaller screens */
-  .cv-section {
-    margin-bottom: 1.5rem;
-  }
   
   .job, .education {
     margin-bottom: 1rem;
@@ -336,7 +343,6 @@ body {
   
   .cv-header {
     padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
   }
 }
 
