@@ -1,30 +1,7 @@
-:root {
-  --primary-color: #2c3e50;
-  --secondary-color: #3498db;
-  --background-color: #f8f9fa;
-  --text-color: #333;
-  --border-color: #ddd;
-  --section-spacing: 2rem;
-}
-
-html {
-  color-scheme: light dark;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 16px;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.4;
-}
-
 .cv-container {
   max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
+  margin: var(--space-xl) auto;
+  padding: var(--space-xl);
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -32,13 +9,13 @@ body {
 .cv-header {
   border-bottom: 2px solid var(--secondary-color);
   margin-bottom: var(--section-spacing);
-  
+
   & .cv-header-title {
     display: flex;
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-    gap: 1rem;
+    gap: var(--space-md);
 
     & p {
       margin: 0;
@@ -47,7 +24,7 @@ body {
       text-align: right;
     }
   }
-  
+
   & h1 {
     margin: 0;
     color: var(--primary-color);
@@ -58,15 +35,15 @@ body {
 .contact-info {
   width: 100%;
   display: grid;
-  gap: 1rem;
-  margin-top: 1rem;
-  
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+
   & p {
     margin: 0.25rem 0;
     min-width: max-content;
     text-align: center;
   }
-  
+
 
 }
 
@@ -74,32 +51,32 @@ body {
 @media (min-width: 768px) {
   .contact-info {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: var(--space-lg);
   }
 }
 
 .cv-section {
-  
+
   & h2 {
     color: var(--primary-color);
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
+    padding-bottom: var(--space-xs);
     margin-top: 0;
   }
 }
 
 .job, .education {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-lg);
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: auto auto auto auto;
-  grid-template-areas: 
+  grid-template-areas:
     "period title"
     "period organization"
     "period description"
     "period skills";
-  gap: 0.5rem;
-  column-gap: 1.5rem;
+  gap: var(--space-xs);
+  column-gap: var(--space-lg);
   align-items: start;
 }
 
@@ -141,37 +118,29 @@ body {
 
 .skills {
   grid-area: skills;
-  margin-top: 0.5rem;
+  margin-top: var(--space-xs);
 }
 
 .description {
-  margin-top: 0.5rem;
+  margin-top: var(--space-xs);
   grid-area: description;
 }
 
 .description ul {
   margin: 0;
-  padding-left: 1.2rem;
+  padding-left: var(--space-md);
 }
 
 .description ul li {
-  margin-bottom: 0.3rem;
+  margin-bottom: var(--space-2xs);
 }
 
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #121212;
-    --text-color: #ffffff;
-    --border-color: #555;
-    --primary-color: #4a9ced;
-    --secondary-color: #63b3ff;
-  }
-  
   .cv-container {
     background-color: #1e1e1e;
   }
-  
+
   .date-range, .duration {
     color: #aaaaaa;
   }
@@ -179,170 +148,148 @@ body {
 
 /* Print styles */
 @media print {
-  html {
-    font-size: 12px;
-  }
-  
-  body {
-    background-color: white;
-    line-height: 1.4;
-  }
-  
   .cv-container {
     margin: 0;
     padding: 0;
     box-shadow: none;
     max-width: 100%;
   }
-  
+
   .cv-header {
-    padding-bottom: 0.8rem;
-    margin-bottom: 1.8rem;
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-xl);
     border-bottom-width: 1px;
   }
-  
+
   .cv-header h1 {
     color: black;
     font-size: 2rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .contact-info {
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    gap: var(--space-xs);
+    margin-top: var(--space-xs);
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .contact-info p {
-    margin: 0.1rem 0;
+    margin: var(--space-3xs) 0;
     font-size: 1rem;
   }
-  
-  
+
+
   .cv-section h2 {
     color: black;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.3rem;
+    margin-bottom: var(--space-xs);
+    padding-bottom: var(--space-2xs);
     font-size: 1.3rem;
   }
-  
+
   .job, .education {
-    margin-bottom: 0.1rem;
+    margin-bottom: var(--space-3xs);
     grid-template-columns: 1fr 3fr;
-    gap: 0.2rem;
-    row-gap: 0.15rem;
+    gap: var(--space-2xs);
+    row-gap: var(--space-3xs);
   }
-  
+
   .job h3, .education h3 {
     color: black;
     font-size: 1.1rem;
     margin-top: -4px;
 
   }
-  
+
   .organization {
     font-size: 1rem;
   }
-  
+
   .date-range, .duration {
     color: #444;
     font-size: 0.9rem;
-    margin: 0.1rem 0;
+    margin: var(--space-3xs) 0;
   }
-  
+
   .description {
-    margin-top: 0.1rem;
+    margin-top: var(--space-3xs);
   }
-  
+
   .description ul {
-    padding-left: 1rem;
-    margin: 0.2rem 0;
+    padding-left: var(--space-md);
+    margin: var(--space-2xs) 0;
   }
-  
+
   .description ul li {
-    margin-bottom: 0.2rem;
+    margin-bottom: var(--space-2xs);
     padding: 0;
     line-height: 1.4;
   }
-  
+
   .skills {
-    margin-top: 0.1rem;
+    margin-top: var(--space-3xs);
     font-size: 1rem;
-  }
-  
-  @page {
-    margin: 0.8cm;
-    size: auto;
   }
 }
 
 /* Responsive styles */
 @media (max-width: 600px) {
-  html {
-    font-size: 14px;
-  }
-
   .cv-container {
     margin: 0;
-    padding: 1rem;
+    padding: var(--space-md);
     box-shadow: none;
   }
-  
+
   .cv-header h1 {
     font-size: 2rem;
   }
-  
+
   .contact-info {
     grid-template-columns: 1fr;
   }
-  
+
   .job, .education {
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       "title"
       "organization"
       "period"
       "description"
       "skills";
-    gap: 1rem;
-    
+    gap: var(--space-md);
+
     & .period {
       text-align: left;
       padding-right: 0;
       align-items: flex-start;
-      margin-bottom: 0.5rem;
+      margin-bottom: var(--space-xs);
     }
-    
+
     & .duration {
       text-align: left;
     }
   }
-  
+
   /* Optimize spacing for smaller screens */
-  
+
   .job, .education {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-md);
   }
 }
 
 /* Extra small screen optimization */
 @media (max-width: 600px) {
-  html {
-    font-size: 13px;
-  }
-
   .contact-info {
     & p {
       text-align: left;
     }
   }
-  
+
   .cv-container {
-    padding: 0.75rem;
+    padding: var(--space-sm);
   }
-  
+
   .cv-header {
-    padding-bottom: 1.5rem;
+    padding-bottom: var(--space-lg);
   }
 }
 
@@ -355,26 +302,12 @@ body {
   }
 
   .cv-container {
-    margin: 1rem;
-    padding: 1.5rem;
+    margin: var(--space-md);
+    padding: var(--space-lg);
   }
-  
+
   .job, .education {
     grid-template-columns: 1fr 2fr;
-    column-gap: 1rem;
-  }
-}
-
-/* Better focus styles for accessibility */
-a:focus, button:focus {
-  outline: 2px solid var(--secondary-color);
-  outline-offset: 2px;
-}
-
-/* Support for prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-    animation: none !important;
+    column-gap: var(--space-md);
   }
 }

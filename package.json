@@ -2,7 +2,7 @@
   "name": "mk-cv",
   "private": true,
   "version": "0.0.0",
-  "source": "src/index.html",
+  "source": ["src/index.html", "src/golden-card.html"],
   "scripts": {
     "start": "parcel",
     "build": "parcel build"

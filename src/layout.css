@@ -1,0 +1,49 @@
+
+.c-viewport {
+    block-size: 100dvh;
+    inline-size: 100vw;
+    display: grid;
+    grid-template-columns: var(--cols, 1fr);
+    grid-template-rows: var(--rows, 1fr);
+    gap: var(--gap, 0);
+}
+
+.c-panel {
+    grid-column: var(--col, auto);
+    grid-row: var(--row, auto);
+    align-self: stretch;
+    justify-self: stretch;
+
+    isolation: isolate;
+    contain: strict;
+    container-name: panel;
+    container-type: size;
+}
+
+
+.c-content {
+    block-size: 100%;
+    inline-size: 100%;
+    box-sizing: border-box;
+    padding: var(--pad, 0);
+
+    overflow: auto;
+
+    display: grid;
+    place-content: var(--align, start stretch);
+}
+
+.c-content > * {
+    min-block-size: 0;
+    max-inline-size: var(--max-w, none);
+}
+
+.c-content.prose {
+    --align: start safe center;
+    --max-w: 90ch;
+}
+
+.c-content.distinct {
+    --align: start safe center;
+    --pad: var(--pad-top, 2rem) 1rem 0;
+}
