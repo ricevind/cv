@@ -108,7 +108,7 @@
 .cgc-content section p {
   margin: 0;
   font-size: clamp(15px, 2.5vw, 17px);
-  line-height: 1.65;
+  line-height: 1.45;
   color: var(--cgc-color-body-text);
 }
 
