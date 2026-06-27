@@ -1,9 +1,13 @@
-
 :root {
-  --cgc-font-display: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
-  /* --cgc-font-body: 'Plus Jakarta Sans', sans-serif; */
+  --cgc-font-display:
+    ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
-  --cgc-color-bg-gradient: radial-gradient(120% 90% at 50% -10%, #fdfbf6 0%, #f4f1ea 55%, #eef0ee 100%);
+  --cgc-color-bg-gradient: radial-gradient(
+    120% 90% at 50% -10%,
+    #fdfbf6 0%,
+    #f4f1ea 55%,
+    #eef0ee 100%
+  );
   --cgc-color-text: #2b2a26;
   --cgc-color-heading: #26251f;
   --cgc-color-subtitle: #8b887d;
@@ -18,10 +22,11 @@
   --cgc-hue-cel: 150;
   --cgc-hue-cena: 70;
   --cgc-hue-termin: 240;
+  --cgc-hue-reguly: 320;
 }
 
 .c-panel {
-   background: var(--cgc-color-bg-gradient);
+  background: var(--cgc-color-bg-gradient);
 }
 
 .cgc {
@@ -40,7 +45,6 @@
   flex-direction: column;
   gap: clamp(14px, 2.4vw, 20px);
   max-width: 72ch;
-  min-width: 46ch;
 }
 
 .cgc-content header {
@@ -48,7 +52,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 10px;
+  gap: 5px;
   padding: 0 8px;
 }
 
@@ -56,7 +60,7 @@
   margin: 6px 0 0;
   font-family: var(--cgc-font-display);
   font-weight: 400;
-  font-size: clamp(40px, 9vw, 64px);
+  font-size: clamp(26px, 7vw, 56px);
   line-height: 1.02;
   letter-spacing: -0.01em;
   color: var(--cgc-color-heading);
@@ -119,4 +123,71 @@
   font-weight: 700;
   font-size: 0.92em;
   color: var(--cgc-color-heading);
+}
+
+.cgc-content section.cgc-rules-section {
+  --cgc-hue: var(--cgc-hue-reguly);
+}
+
+.cgc-rules {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cgc-rule {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border-radius: 18px;
+  padding: clamp(14px, 2.4vw, 18px);
+  background: oklch(0.975 0.018 var(--cgc-hue));
+  border: 1px solid oklch(0.93 0.03 var(--cgc-hue));
+}
+
+.cgc-rule-num {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--cgc-color-card-bg);
+  border: 1px solid oklch(0.9 0.04 var(--cgc-hue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: oklch(0.5 0.09 var(--cgc-hue));
+  font-variant-numeric: tabular-nums;
+}
+
+.cgc-rule-text {
+  font-size: clamp(15px, 2.5vw, 16px);
+  line-height: 1.5;
+  color: var(--cgc-color-body-text);
+  font-weight: 500;
+}
+
+.cgc-rule--crown {
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    oklch(0.96 0.04 var(--cgc-hue)),
+    oklch(0.94 0.05 300)
+  );
+  border: 1px solid oklch(0.88 0.05 var(--cgc-hue));
+}
+
+.cgc-rule--crown .cgc-rule-num {
+  border: none;
+}
+
+.cgc-rule--crown .cgc-rule-text {
+  font-size: clamp(15px, 2.5vw, 17px);
+  line-height: 1.4;
+  color: var(--cgc-color-heading);
+  font-weight: 700;
 }

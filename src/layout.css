@@ -1,6 +1,10 @@
 @layer base;
 
-@media (max-width: 48rem) {
+@media (max-width: 1000px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+
   .c-viewport {
     grid-template-columns: 1fr;
     grid-template-rows: unset;
@@ -11,10 +15,13 @@
     grid-column: 1 / -1;
     grid-row: auto;
     height: 100dvh;
+
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
 
   .c-content.distinct {
-    --align: center center;
+    --align: safe center safe center;
   }
 }
 
