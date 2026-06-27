@@ -21,24 +21,26 @@
 }
 
 .c-panel {
-    background: var(--cgc-color-bg-gradient);
+   background: var(--cgc-color-bg-gradient);
 }
 
 .cgc {
-  background: var(--cgc-color-bg-gradient);
   color: var(--cgc-color-text);
   font-family: var(--cgc-font-body);
+  border-radius: 28px;
 }
 
 .cgc-content {
   background: var(--cgc-color-card-bg);
+  box-shadow: var(--cgc-shadow-card);
   border: 1px solid var(--cgc-color-card-border);
   border-radius: 28px;
-  box-shadow: var(--cgc-shadow-card);
   padding: clamp(22px, 4vw, 38px);
   display: flex;
   flex-direction: column;
   gap: clamp(14px, 2.4vw, 20px);
+  max-width: 72ch;
+  min-width: 46ch;
 }
 
 .cgc-content header {

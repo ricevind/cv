@@ -1,14 +1,33 @@
+@layer base;
 
-.c-viewport {
+@media (max-width: 48rem) {
+  .c-viewport {
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+    grid-auto-flow: row;
+    block-size: auto;
+  }
+  .c-panel {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    height: 100dvh;
+  }
+
+  .c-content.distinct {
+    --align: center center;
+  }
+}
+
+@layer base {
+  .c-viewport {
     block-size: 100dvh;
-    inline-size: 100vw;
     display: grid;
     grid-template-columns: var(--cols, 1fr);
     grid-template-rows: var(--rows, 1fr);
     gap: var(--gap, 0);
-}
+  }
 
-.c-panel {
+  .c-panel {
     grid-column: var(--col, auto);
     grid-row: var(--row, auto);
     align-self: stretch;
@@ -18,10 +37,9 @@
     contain: strict;
     container-name: panel;
     container-type: size;
-}
+  }
 
-
-.c-content {
+  .c-content {
     block-size: 100%;
     inline-size: 100%;
     box-sizing: border-box;
@@ -31,19 +49,40 @@
 
     display: grid;
     place-content: var(--align, start stretch);
-}
+  }
 
-.c-content > * {
-    min-block-size: 0;
-    max-inline-size: var(--max-w, none);
-}
+  .c-scrollbar {
+    --scrollbar-size: 4px;
+    --scrollbar-width: thin;
+    --scrollbar-thumb: rgba(0, 0, 0, 0.15);
+    --scrollbar-track: transparent;
+    --scrollbar-radius: 4px;
 
-.c-content.prose {
+    scrollbar-width: var(--scrollbar-width);
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+
+  .c-scrollbar::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+  }
+
+  .c-scrollbar::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+
+  .c-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: var(--scrollbar-radius);
+  }
+
+  .c-content.prose {
     --align: start safe center;
     --max-w: 90ch;
-}
+  }
 
-.c-content.distinct {
+  .c-content.distinct {
     --align: start safe center;
-    --pad: var(--pad-top, 2rem) 1rem 0;
+    --pad: var(--pad-top, 2rem) 1rem;
+  }
 }
