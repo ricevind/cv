@@ -40,10 +40,10 @@
   box-shadow: var(--cgc-shadow-card);
   border: 1px solid var(--cgc-color-card-border);
   border-radius: 28px;
-  padding: clamp(22px, 4vw, 38px);
+  padding: clamp(18px, 4vw, 38px);
   display: flex;
   flex-direction: column;
-  gap: clamp(14px, 2.4vw, 20px);
+  gap: clamp(8px, 2.4vw, 20px);
   max-width: 72ch;
 }
 
@@ -60,7 +60,7 @@
   margin: 6px 0 0;
   font-family: var(--cgc-font-display);
   font-weight: 400;
-  font-size: clamp(26px, 7vw, 56px);
+  font-size: clamp(20px, 6vw, 56px);
   line-height: 1.02;
   letter-spacing: -0.01em;
   color: var(--cgc-color-heading);
@@ -70,7 +70,7 @@
   margin: 0;
   font-family: var(--cgc-font-display);
   font-style: italic;
-  font-size: clamp(16px, 2.6vw, 19px);
+  font-size: clamp(12px, 2.6vw, 19px);
   color: var(--cgc-color-subtitle);
 }
 
@@ -107,8 +107,8 @@
 
 .cgc-content section p {
   margin: 0;
-  font-size: clamp(15px, 2.5vw, 17px);
-  line-height: 1.65;
+  font-size: clamp(12px, 2.5vw, 17px);
+  line-height: clamp(1.35rem, 2.5vw, 1.65rem);
   color: var(--cgc-color-body-text);
 }
 

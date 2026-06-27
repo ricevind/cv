@@ -14,7 +14,7 @@
   .c-panel {
     grid-column: 1 / -1;
     grid-row: auto;
-    height: 100dvh;
+    height: 100vh;
 
     scroll-snap-align: center;
     scroll-snap-stop: always;
